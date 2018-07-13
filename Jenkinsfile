@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building. YAYA PR111111111'
+                echo 'Building. YAYA PR2'
             }
         }
         stage('Test') {

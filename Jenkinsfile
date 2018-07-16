@@ -6,7 +6,7 @@ pipeline {
                 echo "We have begun testing"
                 sh 'node -v'
                 nodejs('Node 10') {
-                    npm install
+                    npm version
                 }
 
                 echo "Testing is over"

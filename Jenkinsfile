@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo "We have begun testing"
                 sh 'node -v'
-                nodejs(nodeJSInstallationName: 'Node 10', configId: '<config-file-provider-id>') {
+                nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm config ls'
                 }
 

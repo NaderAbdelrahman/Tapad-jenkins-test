@@ -1,4 +1,4 @@
-node('master') {
+pipeline {
 
     currentBuild.result = "SUCCESS YEE"
 

@@ -7,6 +7,7 @@ pipeline {
                 sh 'node -v'
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm config ls'
+                    sh 'npm i --verbose markdown-it'
                 }
 
                 echo "Testing is over"

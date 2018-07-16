@@ -22,6 +22,8 @@ pipeline {
                     sh 'git push --force origin jenkins-commit'
                     sh 'git status'
                 */
+            }
+        }
                 post {
                         always {
                             archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
@@ -29,7 +31,5 @@ pipeline {
                         }
                     }
                 echo "Testing is over"
-            }
-        }
     }
 }

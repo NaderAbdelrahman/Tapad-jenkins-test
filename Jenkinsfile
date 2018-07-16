@@ -9,7 +9,7 @@ pipeline {
                 sh 'ls'
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm i --verbose markdown-it'
-                    sh 'node server.js'
+                    sh 'node main.js'
                 }
                 sh 'pwd'
                 sh 'ls'

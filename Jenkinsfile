@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building... From Master'
+                echo 'Building... From Master Test'
             }
         }
         stage('Test') {

@@ -14,7 +14,6 @@ node('master') {
             env.NODE_ENC = "test"
 
             sh 'node -v'
-            sh 'npm prune'
             sh 'npm install'
             sh 'npm test'
 

@@ -1,5 +1,6 @@
 pipeline {
-
+    agent any
+    stages{
         stage('Checkout') {
             checkout scm
         }
@@ -17,4 +18,5 @@ pipeline {
                 echo "Testing is over"
             }
         }
+    }
 }

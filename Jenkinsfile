@@ -5,9 +5,11 @@ pipeline {
             steps {
                 echo "We have begun testing"
                 sh 'node -v'
+                sh 'pwd'
+                sh 'ls'
                 nodejs(nodeJSInstallationName: 'Node 10') {
-                    sh 'npm config ls'
                     sh 'npm i --verbose markdown-it'
+
                 }
 
                 echo "Testing is over"

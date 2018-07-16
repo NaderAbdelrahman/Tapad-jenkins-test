@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building. YAYA'
+                echo 'Building... From Master'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..88'
+                echo 'Testing..'
             }
         }
         stage('Deploy') {

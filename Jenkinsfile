@@ -17,6 +17,7 @@ pipeline {
                 sh 'git add .'
                 sh 'git commit -m "jenkins commit"'
                 sh 'git config --global push.default simple'
+                sh 'git status'
                 sh 'git push origin jenkins-commit'
                 sh 'git status'
                 echo "Testing is over"

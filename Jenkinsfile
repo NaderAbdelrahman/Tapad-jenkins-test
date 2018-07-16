@@ -10,6 +10,7 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm i --verbose markdown-it'
                 }
+                sh 'npm i --verbose markdown-it'
                 sh 'pwd'
                 sh 'ls'
                 echo "Testing is over"

@@ -11,6 +11,7 @@ pipeline {
                     sh 'npm i --verbose fs'
                     sh 'node main.js'
                 }
+                echo "hai"
                 /*
                     git credentialsId: 'b65a2f8f-0e83-44c9-9510-8183f4197b72', url: 'https://github.com/NaderAbdelrahman/jenkins-test.git'
                     sh 'git status'

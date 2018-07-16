@@ -12,6 +12,8 @@ pipeline {
                     sh 'node main.js'
                 }
                 echo "hai"
+                archiveArtifacts artifacts: '*.html'
+                echo "Testing is over"
                 /*
                     git credentialsId: 'b65a2f8f-0e83-44c9-9510-8183f4197b72', url: 'https://github.com/NaderAbdelrahman/jenkins-test.git'
                     sh 'git status'
@@ -24,12 +26,5 @@ pipeline {
                 */
             }
         }
-                post {
-                        always {
-                            archiveArtifacts artifacts: 'build/libs/**/*.jar', fingerprint: true
-                            junit '*.html'
-                        }
-                    }
-                echo "Testing is over"
     }
 }

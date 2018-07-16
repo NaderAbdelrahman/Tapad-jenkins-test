@@ -1,0 +1,12 @@
+{
+  "name": "markdown-it_jenkins-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "markdown-it": "^8.4.1",
+    "opn": "^5.3.0"
+  }
+}

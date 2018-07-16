@@ -14,7 +14,9 @@ pipeline {
                 git credentialsId: 'b65a2f8f-0e83-44c9-9510-8183f4197b72', url: 'https://github.com/NaderAbdelrahman/jenkins-test.git'
                 sh 'git checkout jenkins-commits'
                 sh 'git status'
-                sh 'ls'
+                sh 'git commit -am "jenkins commit"'
+                sh 'git push'
+                sh 'git status'
                 echo "Testing is over"
             }
         }

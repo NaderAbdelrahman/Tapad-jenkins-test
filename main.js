@@ -1,6 +1,8 @@
 const md = require('markdown-it')();
 const fs = require('fs');
 
+const METADATA_SEPARATOR = "~~~~";
+
 fs.readFile('README.md', 'utf8', (err, fileContent) => {
     if (err) throw err;
 

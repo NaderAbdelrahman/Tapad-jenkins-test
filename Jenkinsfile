@@ -11,19 +11,9 @@ pipeline {
                     sh 'npm i --verbose fs'
                     sh 'node main.js'
                 }
-                echo "hai"
                 archiveArtifacts artifacts: '*.html'
+                echo "the output html file is in the artifacts tab for your viewing pleasure"
                 echo "Testing is over"
-                /*
-                    git credentialsId: 'b65a2f8f-0e83-44c9-9510-8183f4197b72', url: 'https://github.com/NaderAbdelrahman/jenkins-test.git'
-                    sh 'git status'
-                    sh 'git add .'
-                    sh 'git commit -m "jenkins commit"'
-                    sh 'git config --global push.default simple'
-                    sh 'git status'
-                    sh 'git push --force origin jenkins-commit'
-                    sh 'git status'
-                */
             }
         }
     }

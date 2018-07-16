@@ -1,6 +1,6 @@
 const md = require('markdown-it')();
 const fs = require('fs');
-const mdFile = require('README.md');
+const mdFile = require('./README.md');
 
 fs.readFile('README.md', 'utf8', (err, fileContent) => {
 

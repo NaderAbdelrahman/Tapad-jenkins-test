@@ -11,7 +11,9 @@ pipeline {
             steps {
                 echo "We have begun testing"
                 sh 'node -v'
-                sh 'npm install'
+                withTool('Node 10.6.0'){
+                    sh 'npm install'
+                }
                 sh 'npm test'
                 echo "Testing is over"
             }

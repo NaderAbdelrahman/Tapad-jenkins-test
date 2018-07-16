@@ -5,7 +5,10 @@ pipeline {
             steps {
                 echo "We have begun testing"
                 sh 'node -v'
-                sh 'npm test'
+                nodejs('Node 10') {
+                    npm install
+                }
+
                 echo "Testing is over"
             }
         }

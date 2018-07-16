@@ -12,6 +12,7 @@ pipeline {
                     sh 'node main.js'
                 }
                 git credentialsId: 'b65a2f8f-0e83-44c9-9510-8183f4197b72', url: 'https://github.com/NaderAbdelrahman/jenkins-test.git'
+                sh 'git checkout jenkins-commits'
                 sh 'git status'
                 sh 'ls'
                 echo "Testing is over"

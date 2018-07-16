@@ -1,21 +1,30 @@
-pipeline {
-    agent any
+node('node') {
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building... From Master TEST'
-            }
+    currentBuild.result = "SUCCESS YEE"
+
+    try {
+
+        stage('Checkout') {
+            checkout scm
         }
+
         stage('Test') {
-            steps {
-                echo 'Testing..'
+            steps{
+                echo "We have begun testing"
+
+                env.NODE_ENC = "test"
+
+                sh 'node -v'
+                sh 'npm prune'
+                sh 'npm install'
+                sh 'npm test'
+
+                echo "Testing is over"
+
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
     }
+
+
 }

@@ -8,5 +8,5 @@ fs.readFile('README.md', 'utf8', (err, fileContent) => {
     fs.writeFile('README.html', md.render('./README.md'), (err) => {
         if (err) throw err;
     })
-    
+
 });

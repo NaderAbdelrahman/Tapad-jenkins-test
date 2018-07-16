@@ -15,10 +15,10 @@ pipeline {
                 sh 'git checkout jenkins-commits'
                 sh 'git status'
                 sh 'git add .'
-                sh 'git commit -m "jenkins commit"'
+                sh 'git commit --force -m "jenkins commit"'
                 sh 'git config --global push.default simple'
                 sh 'git status'
-                sh 'git push origin jenkins-commit'
+                sh 'git push --force origin jenkins-commit'
                 sh 'git status'
                 echo "Testing is over"
             }

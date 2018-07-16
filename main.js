@@ -1,16 +1,12 @@
 const md = require('markdown-it')();
 const fs = require('fs');
 
-const METADATA_SEPARATOR = "~~~~";
-
 fs.readFile('README.md', 'utf8', (err, fileContent) => {
+
     if (err) throw err;
 
-    const [ metadata, content ] = fileContent.split(`${ METADATA_SEPARATOR }\n`);
-    // console.log(metadata);
-
-    fs.writeFile('README.html', md.render(content), (err) => {
+    fs.writeFile('README.html', md.render('./README.md'), (err) => {
         if (err) throw err;
-        // console.log(./README.html);
     })
+    
 });

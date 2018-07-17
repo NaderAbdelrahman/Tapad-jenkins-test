@@ -1,12 +1,18 @@
 const md = require('markdown-it')();
 const fs = require('fs');
 
-fs.readFile('*.md', 'utf8', (err, fileContent) => {
-
-    if (err) throw err;
-
-    fs.writeFile('*.html', md.render(fileContent), (err) => {
+fs.readdirSync(testFolder).forEach(file => {
+    fs.writeFile(file, md.render(fileContent), (err) => {
         if (err) throw err;
     })
-
 });
+
+// fs.readFile('*.md', 'utf8', (err, fileContent) => {
+//
+//     if (err) throw err;
+//
+//     fs.writeFile('*.html', md.render(fileContent), (err) => {
+//         if (err) throw err;
+//     })
+//
+// });

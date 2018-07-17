@@ -1,8 +1,9 @@
 pipeline {
     agent any
     stages{
-        stage('Test') {
+        stage('Execute Install Node Packages, and Run Script') {
             steps {
+
                 echo "We have begun testing"
                 sh 'node -v'
                 sh 'ls'
@@ -14,6 +15,11 @@ pipeline {
                 archiveArtifacts artifacts: '*.html'
                 echo "the output html file is in the artifacts tab for your viewing pleasure"
                 echo "Testing is over"
+            }
+        }
+        stage('Upload rendered html file to GCS') {
+            steps {
+                googleStorageUpload bucket: 'gs://scratch.frontend-stg.tapad.com', credentialsId: 'tapad-infrastructure-prd', pattern: '*.html'
             }
         }
     }

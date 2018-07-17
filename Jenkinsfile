@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Upload rendered html file to GCS') {
             steps {
-                googleStorageUpload bucket: 'gs://scratch.frontend-stg.tapad.com', credentialsId: 'tapad-infrastructure-prd', pattern: '*.html'
+                googleStorageUpload bucket: 'gs://scratch.frontend-stg.tapad.com', credentialsId: 'Tapad Registry', pattern: '*.html'
             }
         }
     }

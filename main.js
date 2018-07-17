@@ -1,7 +1,7 @@
 const md = require('markdown-it')();
 const fs = require('fs');
 
-fs.readdirSync(testFolder).forEach(file => {
+fs.readdirSync().forEach(file => {
     fs.writeFile(file, md.render(fileContent), (err) => {
         if (err) throw err;
     })

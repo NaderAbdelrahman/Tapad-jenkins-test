@@ -2,7 +2,7 @@ const md = require('markdown-it')();
 const fs = require('fs');
 
 fs.readdirSync("./").forEach(file => {
-    fs.writeFile(file, md.render(fileContent), (err) => {
+    fs.writeFile(`${file}.html`, md.render(file), (err) => {
         if (err) throw err;
     })
 });

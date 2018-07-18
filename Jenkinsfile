@@ -9,9 +9,11 @@ pipeline {
                     sh 'node main.js'
                 }
                 sh 'ls'
+                sh 'pwd'
                 sh 'cd GCS/'
+                sh 'pwd'
                 sh 'ls'
-                archiveArtifacts artifacts: 'GCS/articles/*.html?'
+                // archiveArtifacts artifacts: 'GCS/articles/*.html?
                 echo "the outputed html file is in the artifacts tab for your viewing pleasure"
             }
         }

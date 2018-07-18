@@ -7,7 +7,7 @@ pipeline {
                     sh 'npm install'
                     sh 'node main.js'
                 }
-                archiveArtifacts artifacts: '*.html'
+                archiveArtifacts artifacts: 'GCS/articles/*.html?'
                 echo "the outputed html file is in the artifacts tab for your viewing pleasure"
             }
         }

@@ -3,13 +3,10 @@ pipeline {
     stages{
         stage('Convert md to html') {
             steps {
-                sh 'ls'
-                //nodejs(nodeJSInstallationName: 'Node 10') {
-                //  ''  sh 'npm install'
-                    //sh 'node main.js'
-                //}
-                sh 'ls'
-                sh 'pwd'
+                nodejs(nodeJSInstallationName: 'Node 10') {
+                    sh 'npm install'
+                    sh 'node main.js'
+                }
                 dir('GCS/articles') {
                     archiveArtifacts artifacts: '**/*.html'
                     sh 'ls'

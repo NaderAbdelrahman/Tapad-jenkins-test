@@ -34,16 +34,18 @@ function metadataStorer(files, callback){
         next();
     });
     walker.on('end', () => {
-            metadataStorer(files, () => {
-                fs.mkdirp(`GCS/metadata/`, () => {
-                    fs.writeFile(`GCS/metadata/0.0.1.json`, JSON.stringify(metadata, null, 2));
-                });
+        metadataStorer(files, () => {
+            fs.mkdirp(`GCS/metadata/`, () => {
+                fs.writeFile(`GCS/metadata/0.0.1.json`, JSON.stringify(metadata, null, 2));
+            });
             files.forEach((file) => {
                 file = file.replace('.md', '');
                 fs.readFile(`${file}.md`, 'utf8', (err, fileContent) => {
+
                     if (err) throw err;
 
                     const path = file.split("/").slice(0, -1).join("/");
+
                     fs.mkdirp(`GCS/${ path }/`, () => {
                         const [metadata, content] = fileContent.split(`${ METADATA_SEPARATOR }`);
                         fs.writeFile(`GCS/${ file + hash}.html`, md.render(content), (err) => {
@@ -54,4 +56,3 @@ function metadataStorer(files, callback){
             });
         });
     });
-    

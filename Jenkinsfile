@@ -4,10 +4,10 @@ pipeline {
         stage('Convert md to html') {
             steps {
                 sh 'ls'
-                nodejs(nodeJSInstallationName: 'Node 10') {
-                    sh 'npm install'
-                    sh 'node main.js'
-                }
+                //nodejs(nodeJSInstallationName: 'Node 10') {
+                //  ''  sh 'npm install'
+                    //sh 'node main.js'
+                //}
                 sh 'ls'
                 sh 'pwd'
                 dir('GCS/articles') {

@@ -11,7 +11,7 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 dir('GCS/articles') {
-                    archiveArtifacts artifacts: '**/*.html'
+                    //archiveArtifacts artifacts: '**/*.html'
                     sh 'ls'
                 }
                 sh 'pwd'

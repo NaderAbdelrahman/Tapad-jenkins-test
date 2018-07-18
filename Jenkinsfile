@@ -12,7 +12,7 @@ pipeline {
                     sh 'ls'
                 }
                 sh 'pwd'
-                // deleteDir()  
+                // deleteDir()   
                 echo "the outputed html file is in the artifacts tab for your viewing pleasure"
             }
         }

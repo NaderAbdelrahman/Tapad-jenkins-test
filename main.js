@@ -54,3 +54,4 @@ function metadataStorer(files, callback){
             });
         });
     });
+    

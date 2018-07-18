@@ -10,12 +10,11 @@ pipeline {
                 }
                 sh 'ls'
                 sh 'pwd'
-                dir('GCS') {
-                    sh 'pwd'
+                dir('GCS/articles') {
+                archiveArtifacts artifacts: '**/*.html'
                 }
                 sh 'pwd'
                 sh 'ls'
-                // archiveArtifacts artifacts: 'GCS/articles/*.html?
                 echo "the outputed html file is in the artifacts tab for your viewing pleasure"
             }
         }

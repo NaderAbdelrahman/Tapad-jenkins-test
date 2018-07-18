@@ -10,7 +10,9 @@ pipeline {
                 }
                 sh 'ls'
                 sh 'pwd'
-                sh 'dir GCS'
+                dir('GCS') {
+                    sh 'pwd'
+                }
                 sh 'pwd'
                 sh 'ls'
                 // archiveArtifacts artifacts: 'GCS/articles/*.html?

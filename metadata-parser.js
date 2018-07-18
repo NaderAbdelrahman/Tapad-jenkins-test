@@ -47,7 +47,7 @@ exports.parse = function (file, cb){
 
         md5File(file, (err, hash) => {
             parsedMetadata.hashPath = [ ...file.split('.').slice(0, -1), hash, 'html' ].join('.');
-            cb(parsedMetadata, hash);
+            cb(parsedMetadata);
         });
     });
 };

@@ -21,7 +21,7 @@ pipeline {
             }
         }
         stage('Keep .html Artifacts'){
-            steps {
+            steps { 
                 dir('GCS/articles') {
                     archiveArtifacts artifacts: '**/*.html'
                 }

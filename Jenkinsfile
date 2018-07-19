@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        GITBRANCHVER=${git describe --tags}
+        GITBRANCHVER = git describe --tags
     }
     stages{
         stage('Branch Ver Num') {

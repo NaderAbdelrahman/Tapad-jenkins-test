@@ -6,7 +6,7 @@ pipeline {
             returnStdout: true
         ).trim()
     }
-    stages{
+    stages {
         stage('Run JS') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 10') {

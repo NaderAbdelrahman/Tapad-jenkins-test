@@ -11,6 +11,9 @@ pipeline {
     }
     stages {
         stage('Run JS') {
+            dir('GCS/metadata') {
+                sh 'rm *'
+            }
             steps {
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm install'
@@ -24,9 +27,6 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.html'
                 }
                 dir('GCS/metadata') {
-                    sh 'ls'
-                    sh 'date -r 0.0.1.json'
-                    sh 'rm 0.0.1.json'
                     sh 'ls'
                     archiveArtifacts artifacts: '**/*.json'
                 }

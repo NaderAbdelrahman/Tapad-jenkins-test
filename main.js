@@ -35,7 +35,24 @@ function metadataStorer(files, callback){
     walker.on('end', () => {
         metadataStorer(files, () => {
             fs.mkdirp(`GCS/metadata/`, () => {
-                fs.writeFile(`GCS/metadata/0.0.1.json`, JSON.stringify(metadata, null, 2));
+                let argv = process.argv;
+                argv = argv[2].split("-");
+                if (argv.length === 3) {
+                    if(argv[0][0] === "v"){
+                        argv[0] = argv[0].replace("v", "");
+                    }
+                    argv.pop();
+                    argv = argv.join(".");
+                }
+                else if (argv.length === 1) {
+                    if(argv[0][0] === "v"){
+                        argv[0] = argv[0].replace("v", "");
+                    }
+                } else {
+                    throw error("Unknown branch version syntax");
+                }
+                console.log(argv);
+                fs.writeFile(`GCS/metadata/${argv}.json`, JSON.stringify(metadata, null, 2));
             });
             files.forEach((file) => {
                 let tmp = file.replace('.md', '');
@@ -52,7 +69,6 @@ function metadataStorer(files, callback){
                             file = file.replace('.md', '');
                             fs.writeFile(`GCS/${ file}.${hash}.html`, md.render(content), (err) => {
                                 if (err) throw err;
-                                console.log(hash);
                             });
                         });
                     });

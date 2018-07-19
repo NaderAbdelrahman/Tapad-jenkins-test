@@ -6,7 +6,7 @@ pipeline {
                 GITBRANCHVER = sh 'git describe --tags'
             }
             steps {
-            echo GITBRANCHVER
+            echo $GITBRANCHVER
             }
         }
         stage('Run JS') {

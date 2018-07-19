@@ -12,9 +12,7 @@ pipeline {
     stages {
         stage('Run JS') {
             steps {
-                dir('GCS/metadata') {
-                    sh 'rm *'
-                }
+                sh 'rm -rf GCS'
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm install'
                     sh 'node main.js $GITBRANCHVER'

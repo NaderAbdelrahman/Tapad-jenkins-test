@@ -19,6 +19,7 @@ pipeline {
             steps {
                 dir('GCS/articles') {
                     archiveArtifacts artifacts: '**/*.html'
+                    archiveArtifacts artifacts: '**/*.json'
                 }
             }
         }

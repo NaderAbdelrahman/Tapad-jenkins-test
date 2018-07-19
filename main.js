@@ -51,7 +51,6 @@ function metadataStorer(files, callback){
                 } else {
                     throw error("Unknown branch version syntax");
                 }
-                console.log(argv);
                 fs.writeFile(`GCS/metadata/${argv}.json`, JSON.stringify(metadata, null, 2));
             });
             files.forEach((file) => {

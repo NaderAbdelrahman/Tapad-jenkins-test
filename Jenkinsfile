@@ -13,7 +13,7 @@ pipeline {
         stage('Run JS') {
             steps {
                 dir('GCS/metadata') {
-                    sh 'rm *'
+                    sh 'ls'
                 }
                 nodejs(nodeJSInstallationName: 'Node 10') {
                     sh 'npm install'

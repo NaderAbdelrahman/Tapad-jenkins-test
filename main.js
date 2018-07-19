@@ -36,8 +36,8 @@ function metadataStorer(files, callback){
         metadataStorer(files, () => {
             fs.mkdirp(`GCS/metadata/`, () => {
                 let argv = process.argv;
-                argv = argv[2].split("-");
                 if (argv.length === 3) {
+                    argv = argv[2].split("-");
                     if(argv[0][0] === "v"){
                         argv[0] = argv[0].replace("v", "");
                     }
@@ -49,8 +49,9 @@ function metadataStorer(files, callback){
                         argv[0] = argv[0].replace("v", "");
                     }
                 } else {
-                    throw error("Unknown branch version syntax");
+                    argv = "0.0.1";
                 }
+
                 fs.writeFile(`GCS/metadata/${argv}.json`, JSON.stringify(metadata, null, 2));
             });
             files.forEach((file) => {

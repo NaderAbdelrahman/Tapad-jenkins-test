@@ -24,6 +24,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/*.html'
                 }
                 dir('GCS/metadata') {
+                    sh 'ls'
                     archiveArtifacts artifacts: '**/*.json'
                 }
             }

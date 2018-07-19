@@ -15,10 +15,12 @@ pipeline {
                 }
             }
         }
-        stage('Keep .html Artifacts'){
+        stage('Keep .html & .json Artifacts'){
             steps {
                 dir('GCS/articles') {
                     archiveArtifacts artifacts: '**/*.html'
+                }
+                dir('GCS/metadata') {
                     archiveArtifacts artifacts: '**/*.json'
                 }
             }

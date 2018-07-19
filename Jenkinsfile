@@ -25,7 +25,7 @@ pipeline {
                 }
                 dir('GCS/metadata') {
                     sh 'ls'
-                    sh 'date -r <0.0.1.json>'
+                    sh 'date -r 0.0.1.json'
                     archiveArtifacts artifacts: '**/*.json'
                 }
             }

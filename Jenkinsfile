@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options {
+        buildDiscarder(logRotator(artifactNumToKeepStr: '0'))
+     }
     environment {
         GITBRANCHVER = sh (
             script: 'git describe --tags',

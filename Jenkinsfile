@@ -3,8 +3,10 @@ pipeline {
     stages{
         stage('Branch Ver Num') {
             steps {
-                sh 'git_V_Num=$(git describe --tags)'
-                sh 'echo $git_V_Num'
+                git_V_Num = sh (
+                    script: 'git describe --tags'
+                )
+                echo git_V_Num
             }
         }
         stage('Run JS') {

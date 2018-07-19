@@ -2,8 +2,7 @@ pipeline {
     agent any
     environment {
         GITBRANCHVER = sh {
-            script: git describe --tags,
-            returnStdout: true
+            script: git describe --tags
         }
     }
     stages{

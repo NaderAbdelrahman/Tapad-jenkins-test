@@ -10,6 +10,7 @@ pipeline {
         stage('Run JS') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 10') {
+                    sh 'echo $GITBRANCHVER'
                     sh 'npm install'
                     sh 'node main.js $GITBRANCHVER'
                 }

@@ -4,7 +4,7 @@ pipeline {
         stage('Obtain Latest Version Number of Git Branch, and Store Into Variable') {
             steps {
                 sh 'git_V_Num=$(git describe --tags)'
-                echo $git_V_Num
+                echo git_V_Num
             }
         }
         stage('Run JS') {

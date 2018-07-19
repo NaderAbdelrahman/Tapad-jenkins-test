@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages{
-        stage('Obtain Latest Version Number of Git Branch, and Store Into Variable') {
+        stage('Branch Ver Num') {
             steps {
                 sh 'git_V_Num=$(git describe --tags)'
-                echo git_V_Num
+                sh 'echo git_V_Num'
             }
         }
         stage('Run JS') {

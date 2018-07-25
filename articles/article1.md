@@ -6,12 +6,3 @@ auth: feature, feature.app, feature2
 ---
 # article 1
 # yep, this is article one
-
-
-- thing
-- thing
-* thing
-
-~thing~
-Yer
-THIS IS NEW

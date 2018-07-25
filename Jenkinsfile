@@ -1,7 +1,7 @@
 pipeline {
     agent any
     options {
-        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '')
+        // buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '')
     }
     environment {
         GITBRANCHVER = sh (
